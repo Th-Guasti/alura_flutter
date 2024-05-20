@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, avoid_print, prefer_const_literals_to_create_immutables
+// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, avoid_print, prefer_const_literals_to_create_immutables, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
 
@@ -25,11 +25,15 @@ class MyApp extends StatelessWidget {
           ),
           backgroundColor: Colors.blue,
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        body: ListView(
           children: [
-            Task('Aprender flutter'),
+            Task('Aprender flutter, cursar inglês, projeto pessoal, stinrel e etc'),
             Task('Andar de bike'),
+            Task('Meditar'),
+            Task('Meditar'),
+            Task('Meditar'),
+            Task('Meditar'),
+            Task('Meditar'),
             Task('Meditar'),
           ],
         ),
@@ -48,33 +52,41 @@ class Task extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Stack(
-        children: [
-          Container(
-            color: Colors.blue,
-            height: 140,
-          ),
-          Container(
-            color: Colors.white,
-            height: 100,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  color: Colors.black26,
-                  width: 72,
-                  height: 100,
-                ),
-                Text(nome),
-                ElevatedButton(
-                    onPressed: () {
-                      print('seta clicada');
-                    },
-                    child: Icon(Icons.arrow_drop_up))
-              ],
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Stack(
+          children: [
+            Container(
+              color: Colors.blue,
+              height: 140,
             ),
-          )
-        ],
+            Container(
+              color: Colors.white,
+              height: 100,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    color: Colors.black26,
+                    width: 72,
+                    height: 100,
+                  ),
+                  Container(
+                    width: 200,
+                    child: Text(
+                    nome,
+                    style: TextStyle(fontSize: 24, overflow: TextOverflow.ellipsis),
+                  )),
+                  ElevatedButton(
+                      onPressed: () {
+                        print('seta clicada');
+                      },
+                      child: Icon(Icons.arrow_drop_up))
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
