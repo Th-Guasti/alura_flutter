@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
+          leading: Container(),
           title: Text(
             'Tarefas',
             style: TextStyle(color: Colors.white),
@@ -88,14 +89,39 @@ class _TaskState extends State<Task> {
                             style: TextStyle(
                                 fontSize: 24, overflow: TextOverflow.ellipsis),
                           )),
-                      ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              nivel++;
-                            });
-                            print(nivel);
-                          },
-                          child: Icon(Icons.arrow_drop_up))
+                      Container(
+                        height: 60,
+                        width: 60,
+                        child: ElevatedButton(
+                            onPressed: () {
+                              setState(() {
+                                nivel++;
+                              });
+                              print(nivel);
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.blue,
+                              padding: EdgeInsets.all(1),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(2)
+                              )
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.arrow_drop_up,
+                                  color: Colors.white,
+                                ),
+                                Text(
+                                  'Up',
+                                  style: TextStyle(
+                                      fontSize: 12, color: Colors.white),
+                                )
+                              ],
+                            )),
+                      )
                     ],
                   ),
                 ),
