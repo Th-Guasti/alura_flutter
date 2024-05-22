@@ -1,4 +1,4 @@
-import 'package:alura_flutter/task.dart';
+import 'package:alura_flutter/components/task.dart';
 import 'package:flutter/material.dart';
 
 class InitialScreen extends StatefulWidget {
@@ -16,7 +16,7 @@ class _InitialScreenState extends State<InitialScreen> {
     return Scaffold(
         appBar: AppBar(
           leading: Container(),
-          title: Text(
+          title: const Text(
             'Tarefas',
             style: TextStyle(color: Colors.white),
           ),
@@ -26,9 +26,9 @@ class _InitialScreenState extends State<InitialScreen> {
 
         body: AnimatedOpacity(
           opacity: opacidade ? 1 : 0,
-          duration: Duration(milliseconds: 800),
+          duration: const Duration(milliseconds: 800),
           child: ListView(
-            children: [
+            children: const [
               Task(
                   'Aprender Flutter',
                   'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large',
@@ -59,7 +59,7 @@ class _InitialScreenState extends State<InitialScreen> {
               opacidade = !opacidade;
             });
           },
-          child: Icon(
+          child: const Icon(
             Icons.remove_red_eye,
             color: Colors.black,
           ),
