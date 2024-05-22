@@ -47,7 +47,7 @@ class _TaskState extends State<Task> {
                       height: 100,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(4),
-                        child: Image.network(
+                        child: Image.asset(
                           widget.foto,
                           fit: BoxFit.cover,
                         ),
@@ -113,7 +113,7 @@ class _TaskState extends State<Task> {
                     child: SizedBox(
                       width: 200,
                       child: LinearProgressIndicator(
-                        color: Colors.white,
+                        color: Colors.white, 
                         value: (widget.dificuldade > 0)
                             ? (nivel / widget.dificuldade) / 10
                             : 1,
